@@ -1,0 +1,28 @@
+{
+    "becas":[
+       {
+          "name":"Objeto 1",
+          "categoria":"Literatura",
+          "edad":"18 en adelante",
+          "nivelEducativo":[
+             "Postgrado", "Licenciatura"
+          ]
+       },
+       {
+          "name":"Objeto 2",
+          "categoria":"Literatura",
+          "edad":"18 en adelante",
+          "nivelEducativo":[
+             "Postgrado", "Licenciatura"
+          ]
+       },
+       {
+        "name":"Objeto 3",
+        "categoria":"Cine",
+        "edad":"Recién graduado",
+        "nivelEducativo":[
+           "Postgrado"
+        ]
+     }
+    ]
+ }
