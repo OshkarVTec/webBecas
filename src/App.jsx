@@ -57,8 +57,10 @@ function App() {
 			currentBecas = new Set(becas);
 		}
 		if (nameSearch.length > 0) {
-			currentBecas = new Set([...currentBecas].filter((beca) =>
-				beca.name.toLowerCase().includes(nameSearch))
+			currentBecas = new Set(
+				[...currentBecas].filter((beca) =>
+					beca.name.toLowerCase().includes(nameSearch)
+				)
 			);
 		}
 		setBecasFinal(currentBecas);
@@ -67,12 +69,16 @@ function App() {
 	return (
 		<>
 			<div>
-				<a href="https://vitejs.dev" target="_blank">
-					<img src={viteLogo} className="logo" alt="Vite logo" />
-				</a>
-				<a href="https://react.dev" target="_blank">
-					<img src={reactLogo} className="logo react" alt="React logo" />
-				</a>
+				<form onSubmit={(e) => e.preventDefault()}>
+					<input
+						type="text"
+						placeholder="Buscar"
+						onChange={(e) => {
+							nameSearch = e.target.value.toLowerCase();
+							filtrar();
+						}}
+					></input>
+				</form>
 			</div>
 			<h1>Vite + React</h1>
 			<div className="card">
