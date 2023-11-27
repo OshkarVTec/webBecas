@@ -8,7 +8,8 @@ function App() {
 	const becas = data.becas;
 	const [becasFinal, setBecasFinal] = useState(new Set());
 	// Añadir todos los datos de los filtros
-	const categorias = new Map(); 
+	let nameSearch = "";
+	const categorias = new Map();
 	const edades = new Map();
 	const nivelesEducativos = new Map();
 	becas.forEach((beca) => {
@@ -52,8 +53,15 @@ function App() {
 				.forEach((item) => currentBecas.add(item));
 			if (filterSet.size > 0) filterFlag = true;
 		}
-		if (filterFlag) setBecasFinal(currentBecas);
-		else setBecasFinal(new Set(becas));
+		if (!filterFlag) {
+			currentBecas = new Set(becas);
+		}
+		if (nameSearch.length > 0) {
+			currentBecas = new Set([...currentBecas].filter((beca) =>
+				beca.name.toLowerCase().includes(nameSearch))
+			);
+		}
+		setBecasFinal(currentBecas);
 	}
 
 	return (

@@ -1,7 +1,7 @@
 {
     "becas":[
        {
-          "name":"Objeto 1",
+          "name":"Santander avanza",
           "categoria":"Literatura",
           "edad":"18 en adelante",
           "nivelEducativo":[
@@ -9,7 +9,7 @@
           ]
        },
        {
-          "name":"Objeto 2",
+          "name":"Santander 2",
           "categoria":"Literatura",
           "edad":"18 en adelante",
           "nivelEducativo":[
