@@ -8,7 +8,6 @@ function App() {
 	const becas = data.becas;
 	const [becasFinal, setBecasFinal] = useState(new Set());
 	// Añadir todos los datos de los filtros
-	//
 	const categorias = new Map(); 
 	const edades = new Map();
 	const nivelesEducativos = new Map();
@@ -17,13 +16,11 @@ function App() {
 		addItems(beca.edad, edades);
 		addItems(beca.nivelEducativo, nivelesEducativos);
 	});
-	//Filtros activos
-
+	//Poner nombre a los filtros
 	const filtros = new Map();
 	filtros.set("categoria", categorias);
 	filtros.set("edad", edades);
 	filtros.set("nivelEducativo", nivelesEducativos);
-	const [count, setCount] = useState(0);
 
 	function addItems(currentValue, map) {
 		if (Array.isArray(currentValue)) {
@@ -71,7 +68,7 @@ function App() {
 			</div>
 			<h1>Vite + React</h1>
 			<div className="card">
-				<button onClick={() => filtrar()}>count is {count}</button>
+				<button onClick={() => filtrar()}>Resultados</button>
 				<p>{becasFinal.size}</p>
 			</div>
 			<p className="read-thttps://stackoverflow.com/questions/74584926/filtering-with-checkboxes-in-reacthe-docs">
