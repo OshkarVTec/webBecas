@@ -8,56 +8,55 @@ function App() {
 	const becas = data.becas;
 	const [becasFinal, setBecasFinal] = useState(new Set());
 	// Añadir todos los datos de los filtros
-	const categorias = new Set();
-	const edades = new Set();
-  const nivelesEducativos = new Set();
-  becas.forEach((beca) => {
+	//
+	const categorias = new Map(); 
+	const edades = new Map();
+	const nivelesEducativos = new Map();
+	becas.forEach((beca) => {
 		addItems(beca.categoria, categorias);
 		addItems(beca.edad, edades);
-    addItems(beca.nivelEducativo, nivelesEducativos);
+		addItems(beca.nivelEducativo, nivelesEducativos);
 	});
-  //Filtros activos
-	const filtroCategoria = new Set();
-	const filtroEdad = new Set();
-  const filtroNivelEducativo = new Set();
+	//Filtros activos
+
 	const filtros = new Map();
-	filtros.set("categoria", filtroCategoria);
-	filtros.set("edad", filtroEdad);
-  filtros.set("nivelEducativo", filtroNivelEducativo);
+	filtros.set("categoria", categorias);
+	filtros.set("edad", edades);
+	filtros.set("nivelEducativo", nivelesEducativos);
 	const [count, setCount] = useState(0);
 
-	function addItems(currentValue, set) {
+	function addItems(currentValue, map) {
 		if (Array.isArray(currentValue)) {
 			for (let i of currentValue) {
-				set.add(i);
+				map[i] = false;
 			}
 		} else {
-			set.add(currentValue);
+			map[currentValue] = false;
 		}
 	}
 
-	function isIn(currentValue, filterSet) {
+	function isIn(currentValue, filterMap) {
 		if (Array.isArray(currentValue)) {
 			for (let i of currentValue) {
-				if (filterSet.has[i]) return true;
+				if (filterMap[i]) return true;
 			}
 		} else {
-			if (filterSet.has(currentValue)) return true;
+			if (filterMap[currentValue]) return true;
 		}
 		return false;
 	}
 
 	function filtrar() {
 		let currentBecas = new Set();
-    let filterFlag = false;
+		let filterFlag = false;
 		for (let [filterName, filterSet] of filtros) {
 			becas
 				.filter((i) => isIn(i[filterName], filterSet))
 				.forEach((item) => currentBecas.add(item));
-      if(filterSet.size > 0) filterFlag = true;
+			if (filterSet.size > 0) filterFlag = true;
 		}
 		if (filterFlag) setBecasFinal(currentBecas);
-    else setBecasFinal(new Set(becas));
+		else setBecasFinal(new Set(becas));
 	}
 
 	return (
