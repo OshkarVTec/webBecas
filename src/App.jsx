@@ -144,7 +144,9 @@ function App() {
 						</form>
 					</div>
 					<div className="cardContainer">
-						{becasFinal.map((beca)=> <Card key={beca.Nombre} beca={beca}/>)}
+						{becasFinal.length > 0 ?
+						becasFinal.map((beca)=> <Card key={beca.Nombre} beca={beca}/>):
+						"No hay ninguna beca que coincida con tu búsqueda"}
 					</div>
 				</div>
 			</div>
