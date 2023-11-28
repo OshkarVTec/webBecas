@@ -1,6 +1,6 @@
 .mainContainer {
 	margin: 1rem;
-  max-height: 80vh;
+	max-height: 80vh;
 }
 
 .dataContainer {
@@ -35,7 +35,7 @@
 	flex-basis: auto;
 	align-self: auto;
 	order: 0;
-  padding: 1rem;
+	padding: 1rem;
 }
 
 .title {
@@ -122,4 +122,19 @@ input:checked ~ .checkmark:after {
 	-webkit-transform: rotate(45deg);
 	-ms-transform: rotate(45deg);
 	transform: rotate(45deg);
+}
+
+@media (max-width: 600px) {
+	.dataContainer {
+		flex-direction: column;
+	}
+
+  .filtrosContainer{
+    max-height: 40vh;
+  }
+
+	.cardContainer {
+		margin-top: 1rem;
+    max-height: 40vh;
+	}
 }
