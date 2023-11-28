@@ -1,0 +1,18 @@
+.card {
+	padding: 1rem;
+	color: #3c6ca8;
+	background-color: #fffcf6;
+	border-radius: 1rem;
+	flex-grow: 0;
+	margin-left: 1rem;
+	margin-bottom: 1rem;
+}
+
+p {
+	color: #b78fd6;
+}
+
+.info {
+    white-space: pre-line;
+	color: #3c6ca8;
+}
