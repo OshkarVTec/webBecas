@@ -18,12 +18,22 @@
 	font-weight: bolder;
 	font-size: 3rem;
 	margin: 0.5rem;
+  flex-shrink: 1;
 }
 
 .logoContainer{
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .logo{
   width: 10rem;
 }
+
+@media (max-width: 600px) {
+	.pageTitle {
+		font-size: 1.5rem;
+	}
+}
+
