@@ -13,6 +13,9 @@
 }
 
 .filtrosContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 	overflow: auto;
 	max-height: 70vh;
 	flex-grow: 0;
@@ -44,7 +47,7 @@
 
 .checkboxgroup {
 	color: #3c6ca8;
-	width: 20em;
+	width: 15em;
 	overflow: auto;
 	border-radius: 1rem;
 	border-color: #3c6ca8;
@@ -54,7 +57,7 @@
 }
 .checkboxgroup label {
 	width: 12em;
-	float: right;
+  float: left;
 }
 
 input {
@@ -130,11 +133,11 @@ input:checked ~ .checkmark:after {
 	}
 
   .filtrosContainer{
-    max-height: 40vh;
+    max-height: 30vh;
   }
 
 	.cardContainer {
 		margin-top: 1rem;
-    max-height: 40vh;
+    max-height: auto;
 	}
 }
