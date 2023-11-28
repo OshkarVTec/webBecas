@@ -13,7 +13,14 @@ p {
 }
 
 .info {
-    white-space: pre-line;
+	white-space: pre-line;
 	color: #3c6ca8;
-    word-break: auto;
+	word-break: auto;
+}
+
+@media (max-width: 600px) {
+	.card {
+		margin-left: 0rem;
+	}
+
 }
